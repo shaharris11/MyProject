@@ -1,5 +1,6 @@
 const { Client } = require('pg');
 
-const client = new Client(`postgres://localhost:3546/${slime}`)
+const dbName = "slime"
+const client = new Client(`postgres://localhost:3546/${dbName}`)
 
 module.exports = client;
