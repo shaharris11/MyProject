@@ -1,5 +1,19 @@
 const client = require("../client");
 
+const createMonsters = async ({monster}) => {
+    try {
+        const { rows: [monsterName] } = await client.query(`
+
+            INSERT INTO monsters(monster)
+            VALUES($1)
+            RETURNING *;
+        `, [monster]);
+        return monsterName;
+    } catch (error) {
+        throw error;
+    }
+}
+
 
 async function getMonsters() {
     try {
@@ -31,5 +45,4 @@ const getMonstersById = async (monsterId) => {
     }
 }
 
-
-module.exports = {getMonsters, getMonstersById}
+module.exports = {getMonsters, getMonstersById, createMonsters }

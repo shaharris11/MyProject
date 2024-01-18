@@ -7,8 +7,10 @@ router.get('/health', (req, res, next) => {
 
 router.use('/characters', require('./characters'));
 
-// router.use('/places', require('../'));
+router.use('/places', require('./places'));
 
-// router.use('/monsters', require('./monsters'));
+router.use('/monsters', require('./monsters'));
+
+router.use('/comments', require('./comments'));
 
 module.exports = router;

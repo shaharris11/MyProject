@@ -1,6 +1,21 @@
 const client = require("../client")
 const util = require('../util');
 
+const createCharacters = async ({name, title, age, monsterId, placeId, description, imgUrl }) => {
+    try {
+        const {
+            rows: [character],
+        } = await client.query (`
+            INSERT INTO characters(name, title, age, "monsterId", "placeId", description, "imgUrl")
+            VALUES($1, $2, $3, $4, $5, $6, $7)
+            RETURNING *;
+        `, [name, title, age, monsterId, placeId, description, imgUrl])
+        return character
+    } catch (error) {
+        throw error
+    }
+}
+
 const getAllCharacters = async () => {
     try {
         const { rows } = await client.query(`
@@ -31,4 +46,4 @@ const getCharactersById = async (characterId) => {
 
 
 
-module.exports = { getAllCharacters, getCharactersById,  }
+module.exports = { getAllCharacters, getCharactersById, createCharacters }

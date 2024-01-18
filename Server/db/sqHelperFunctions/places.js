@@ -1,5 +1,18 @@
 const client = require("../client")
 
+const createPlaces = async ({name, owner}) => {
+    try {
+        const { rows: [place] } = await client.query(`
+
+            INSERT INTO places(name, owner)
+            VALUES($1, $2)
+            RETURNING *;
+        `, [name, owner]);
+        return place;
+    } catch (error) {
+        throw error;
+    }
+}
 
 const getPlaces = async () => {
     try {
@@ -31,4 +44,4 @@ const getPlacesId = async (placeId) => {
     }
 }
 
-module.exports = { getPlaces, getPlacesId }
+module.exports = { getPlaces, getPlacesId, createPlaces }
