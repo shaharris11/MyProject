@@ -35,7 +35,7 @@ const getMonstersById = async (monsterId) => {
         } = await client.query(
             `
                 SELECT *
-                FROM monster
+                FROM monsters
                 WHERE "monsterId" =${monsterId};
             `
         )

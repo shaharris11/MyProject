@@ -21,7 +21,7 @@ const places = [
 ]
 
 const comments = [
-   {characterId: 1, name: 'kira', description: 'This is the best!'}
+   {name: 'kira', characterId: 1, description: 'This is the best!'}
 ]
 
 module.exports = {characters, monsters, places, comments}

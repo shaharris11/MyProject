@@ -4,7 +4,7 @@ const {characters, places, monsters, comments} = require('./seedData')
 const { getAllCharacters, getCharactersById, createCharacters } = require('./sqHelperFunctions/characters')
 const { getMonsters, getMonstersById, createMonsters } = require('./sqHelperFunctions/monster');
 const { getPlaces, getPlacesId, createPlaces } = require('./sqHelperFunctions/places');
-const { getAllComments, postComments } = require('./sqHelperFunctions/comments');
+const { getAllComments, createComments } = require('./sqHelperFunctions/comments');
 
 const dropTables = async () => {
     try {
@@ -99,7 +99,7 @@ const createInitialCharacters = async () => {
 const createInitialComment = async () => {
     try {
         for (const comment of comments) {
-            await postComments(comment)
+            await createComments(comment)
         }
         console.log("created comment");
     }catch (error) {

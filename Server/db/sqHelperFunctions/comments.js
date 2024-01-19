@@ -1,72 +1,77 @@
 const client = require("../client")
-const util = require('util');
+const util = require('../util');
 
 async function getAllComments() {
     try {
-        const { rows } = await client.query(`
+        const { rows: comments } = await client.query(`
             SELECT * FROM comments;
         `);
-        return rows;
+        return comments;
     } catch (err) {
         throw err;
     }
 }
 
-async function getCommentId(id) {
+async function getCommentId(commentId) {
     try {
         const { rows: [comment] } = await client.query(`
             SELECT * FROM comments
-            WHERE id = $1;
-        `, [id]);
+            WHERE "commentId" =${commentId}; 
+        `);
         return comment;
     } catch (error) {
         throw error;
     }
 }
 
-async function postComments({name, description}) {
+const createComments = async ({name, charcatersId, description}) => {
     try {
         const { rows: [comment] } = await client.query(`
 
-            INSERT INTO comments(name, description)
-            VALUES($1, $2)
+            INSERT INTO comments(name, "characterId", description)
+            VALUES($1, $2, $3)
             RETURNING *;
-        `, [name, description]);
+        `, [name, charcatersId, description]);
         return comment;
     } catch (error) {
         throw error;
     }
 }
 
-async function putUpdateComment(id, fields = {}) {
-    const setString = Object.keys(fields).map((key, index) => `"${key}"=$${index + 1}`).join(', ');
-    if (setString.length === 0) {
-        return;
-    }
+async function putUpdateComment(commentId, fields) {
     try {
-        const { rows: [comment] } = await client.query(`
+        const toUpdate = {}
+        for (let column in fields) {
+            if (fields[column] !== undefined) toUpdate[column] = fields[column];
+        }
+        let comment;
+
+        if (util.dbFields(toUpdate).insert.length > 0) {
+            const { rows } = await client.query(`
             UPDATE comments
-            SET ${setString}
-            WHERE id=${id}
+            SET ${util.dbFields(toUpdate).insert}
+            WHERE "commentId"=${commentId}
             RETURNING *;
-        `, Object.values(fields));
+          `, Object.values(toUpdate));
+            comment = rows[0];
+        }
         return comment;
     } catch (error) {
         throw error;
     }
 }
 
-async function deleteComment(id) {
+async function deleteComment(commentId) {
     try {
-        const { rows: [comment] } = await client.query(`
+        const { rows: [rows] } = await client.query(`
             DELETE FROM comments
-            WHERE id=$1
+            WHERE "commentId" =$1
             RETURNING *;
-        `, [id]);
-        return comment;
+        `, [commentId]);
+        return rows[0];
     } catch (error) {
         throw error;
     }
 }
 
-module.exports = { getAllComments, getCommentId, postComments, putUpdateComment, deleteComment }
+module.exports = { getAllComments, getCommentId, createComments, putUpdateComment, deleteComment }

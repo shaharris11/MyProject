@@ -34,7 +34,7 @@ const getCharactersById = async (characterId) => {
         } = await client.query(
             `
                 SELECT *
-                FROM character
+                FROM characters
                 WHERE "characterId" =${characterId};
             `
         )

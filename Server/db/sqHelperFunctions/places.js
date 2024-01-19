@@ -34,7 +34,7 @@ const getPlacesId = async (placeId) => {
             rows: [place]
         } = await client.query (
             `
-            SELECT * FROM place
+            SELECT * FROM places
             WHERE "placeId" = ${placeId};
             `
         )
