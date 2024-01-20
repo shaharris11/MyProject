@@ -41,8 +41,8 @@ const createTables = async () => {
         CREATE TABLE characters (
             "characterId" SERIAL PRIMARY KEY,
             name VARCHAR(100) UNIQUE NOT NULL,
-            title VARCHAR(100) UNIQUE NOT NULL,
-            age INTEGER NOT NULL,
+            title VARCHAR(100) NOT NULL,
+            age INTEGER,
             "monsterId" integer REFERENCES monsters("monsterId"),
             "placeId" integer REFERENCES places("placeId"),
             description TEXT NOT NULL,
