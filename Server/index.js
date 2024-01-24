@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 // app.use(cookieParser(COOKIE_SECRET));
 
 // init cors
-// const cors = require('cors');
-// app.use(cors());
+const cors = require('cors');
+app.use(cors());
 
 const client = require('./db/client');
 client.connect();
