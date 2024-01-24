@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllCharacters, getCharactersById, getTableCharacters } = require('../db/sqHelperFunctions/characters');
+const { getAllCharacters, getCharactersById, getTableCharacter } = require('../db/sqHelperFunctions/characters');
 
 
 router.get('/', async (req, res, next) => {
@@ -22,12 +22,12 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
-router.get('/:id/me', async (req, res, next) => {
+router.get('/:id/details', async (req, res, next) => {
     try {
-        const character = await getTableCharacters(req.params.id)
-        res.send(character)
+        const character = await getTableCharacter(req.params.id);
+        res.send(character);
     } catch (error) {
-        next(error)
+        next(error);
     }
 })
 
