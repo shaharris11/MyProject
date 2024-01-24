@@ -3,9 +3,9 @@
 import React from 'react'
 import {Routes, Route} from 'react-router-dom'
 
-import Navigation from './src/components/navigation'
-import Characters from './src/components/characters'
-import SingleCharacters from './src/components/singleCharacter'
+import Navigation from './components/navigation'
+import Characters from './components/characters'
+import SingleCharacters from './components/singleCharacter'
 
 
 
