@@ -1,6 +1,5 @@
 // import { useState } from 'react'
-
-import React from 'react'
+// import React from 'react'
 import {Routes, Route} from 'react-router-dom'
 
 import Navigation from './components/navigation'
@@ -16,7 +15,7 @@ export default function App() {
       <Navigation />
       <Routes>
         <Route path='/' element={<Characters />} />
-        <Route path='/characters/:characterId' element={<SingleCharacters /> }/>
+        <Route path='/characters/:characterId/details' element={<SingleCharacters /> }/>
       </Routes>
     </>
   )
