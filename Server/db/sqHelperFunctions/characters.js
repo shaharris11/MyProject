@@ -15,7 +15,6 @@ const createCharacters = async ({name, title, age, monsterId, placeId, descripti
         throw error
     }
 }
-
 const getAllCharacters = async () => {
     try {
         const { rows } = await client.query(`
@@ -43,19 +42,35 @@ const getCharactersById = async (characterId) => {
         throw error
     }
 }
-const getTableCharacters = async () => {
+
+const getTableCharacter = async (characterId) => {
     try {
-        const { rows } = await client.query(`
+        const { rows: [character] } = await client.query(`
         SELECT monster, places.name, characters.name, characters.title, characters.age, characters.description, characters."imgUrl"
         FROM monsters 
         INNER JOIN characters ON monsters."monsterId" = characters."monsterId"
         INNER JOIN places ON places."placeId" = characters."placeId"
+        WHERE "characterId" =${characterId};
         `)
-        return rows
+        return character
     } catch (error) {
         throw error
     }
 }
+// const getTableCharacter = async () => {
+//     try {
+//         const { rows: [character] } = await client.query(`
+//         SELECT monster, places.name, "characterId", characters.name, characters.title, characters.age, characters.description, characters."imgUrl"
+//         FROM monsters 
+//         INNER JOIN characters ON monsters."monsterId" = characters."monsterId"
+//         INNER JOIN places ON places."placeId" = characters."placeId"
+        
+//         `)
+//         return character
+//     } catch (error) {
+//         throw error
+//     }
+// }
 
 
-module.exports = { getAllCharacters, getCharactersById, createCharacters, getTableCharacters }
+module.exports = { getAllCharacters, getCharactersById, createCharacters, getTableCharacter }
