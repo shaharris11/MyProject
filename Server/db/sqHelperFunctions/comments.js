@@ -1,10 +1,12 @@
 const client = require("../client")
 const util = require('../util');
 
-async function getAllComments() {
+async function getAllComments(characterId) {
     try {
         const { rows: comments } = await client.query(`
-            SELECT * FROM comments;
+            SELECT * 
+            FROM comments
+            WHERE "characterId" =${characterId};
         `);
         return comments;
     } catch (err) {
