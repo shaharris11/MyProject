@@ -1,21 +1,21 @@
 import { useNavigate, useParams} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+
 const apiUrl = "http://localhost:8080/api"
 
 export default function SingleCharacters() {
     const [character, setCharacter] = useState({})
-    // const {characterId} = useParams();
-    const {details} = useParams();
+    const {characterId} = useParams();
+    // const {details} = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log(details);
-        // console.log(characterId);
+        // console.log(details);
+        console.log(characterId);
         async function getCharacter() {
             try {
-                const res = await fetch(`${apiUrl}/characters/:id/${details}`);
-                // const res = await fetch(`${apiUrl}/characters/${characterId}`);
+                const res = await fetch(`${apiUrl}/characters/${characterId}`);
                 const data = await res.json()
                 console.log(data);
                 setCharacter(data)
@@ -31,7 +31,7 @@ export default function SingleCharacters() {
             <img src={character.imgUrl} alt={character.name}/> 
             <h1>{character.name}</h1>
             <h2>{character.title}</h2>
-            <p>{character.age}</p>
+            <p>Age:{character.age}</p>
             <p>{character.monsterId}</p>
             <p>{character.placeId}</p>
             <p>{character.description}</p>
