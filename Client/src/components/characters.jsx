@@ -21,7 +21,7 @@ export default function Characters() {
     console.log(characters);
     return (
         <>
-            <h1>Welcom!</h1>
+            <h1>Welcome to That Time I Got Reincarnated as a Slime!</h1>
             <div className="charactersContainer">
                {characters.map((character) => {
                 return (
@@ -29,8 +29,8 @@ export default function Characters() {
                         <h2>{character.name}</h2>
                         <img src={character.imgUrl} alt={character.name}/>
                         <br />
-                        <button onClick={() => { navigate(`/characters/:characterId/${character.details}`) }}>See Detail</button>
-                        {/* <button onClick={() => { navigate(`/characters/${character.characterId}`) }}>See Detail</button> */}
+                        {/* <button onClick={() => { navigate(`/characters/:characterId/${character.details}`) }}>See Detail</button> */}
+                        <button onClick={() => { navigate(`/characters/${character.characterId}`) }}>See Details</button>
                     </div>
                 )
                })}
