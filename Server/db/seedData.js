@@ -1,20 +1,20 @@
 const monsters = [
-   {monster:"Slime"},
+   {monster: "Slime"},
    {monster: "Dragon"},
    {monster: "Slime Blue Dragon"},
-   {monster: "Goblin"},
+   {monster: "Goblin" },
    {monster: "Ogre"},
    {monster: "Hobgoblin"},
-   {monster: "Tempest Wolf "},
-   {monster: "Tempest Star Wolf"},
-   {monster: "Human"},
+   {monster: "Tempest Wolf " },
+   {monster: "Tempest Star Wolf" },
+   {monster: "Human" },
    {monster: "Orcs"},
-   {monster: "Dwarf"},
+   {monster: "Dwarf" },
    {monster: "Elf"},
    {monster: "Demon"},
    {monster: "Spirit"},
-   {monster: "Harpie"},
-   {monster: "Lion Beastman"}
+   {monster: "Harpie" },
+   {monster: "Lion Beastman" }
 ]
 
 const characters = [
@@ -133,7 +133,7 @@ const characters = [
 
 const places = [
    {name: 'Great Forest of Jura', owner: 'Rimuru Tempest'},
-   {name: 'Kingdom of Falmuth', owner: 'Edward Edmaris Falmuth'},
+   {name: 'Armed Nation of Dwargon', owner: 'Gazel Dwargo'},
    {name: 'N/a', owner: 'Milim Nava'},
    {name: 'The Holy Church', owner: 'Holy Emperor'},
    {name: 'Labyrinth', owner: 'Ramiris'},
