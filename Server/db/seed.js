@@ -29,7 +29,7 @@ const createTables = async () => {
 
     CREATE TABLE monsters (
         "monsterId" SERIAL PRIMARY KEY,
-        monster VARCHAR(100) 
+        monster VARCHAR(100)
         );
 
         CREATE TABLE places (
