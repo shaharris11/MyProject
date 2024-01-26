@@ -5,7 +5,7 @@ const util = require('../db/util');
 const {getAllComments, getCommentId, createComments, putUpdateComment, deleteComment} = require('../db/sqHelperFunctions/comments')
 
 // Get - /api/comments
-router.get('/', async (req, res, next) => {
+router.get('/:characterId', async (req, res, next) => {
     try{
         const comments = await getAllComments();
         res.send(comments);
@@ -24,7 +24,7 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
-// POST - api/comments
+// POST create comments- api/comments
 router.post('/', async (req, res, next) => {
     try {
         const comment = await createComments(req.body);
