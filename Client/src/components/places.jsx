@@ -21,7 +21,7 @@ export default function Places () {
     console.log(places);
     return (
         <>
-            <h1>Welcome to That Time I Got Reincarnated as a Slime!</h1>
+           
             <div className="charactersContainer">
                {places.map((place) => {
                 return (

@@ -3,7 +3,7 @@
     left: 0;
     right: 0;
     align-items: center;
-    background-color: #6cb4ee;
+    background-color: #1f51ff ;
     color: skyblue;
     height: 80px;
     padding: 10px;
@@ -11,12 +11,14 @@
     justify-content: space-evenly;
 }
 
+/* Character Page */
 .character {
-    display: block;
+    display: grid;
+    width: 500px;
+    grid-template-columns: 120px 120px 120px;
+    align-items: start;
+    justify-content: space-between;
     border: solid;
-    margin: 2em 1em 1em 1em;
-    border-radius: 5%;
-    text-align: center;
 }
 
 .character img {
@@ -28,8 +30,20 @@
     z-index: 5;
 }
 
-.home {
-    background-image: url("https://www.phoneswiki.com/wp-content/uploads/2021/05/That-Time-I-Got-Reincarnated-as-a-Slime-Season-2-Part-2-Release.jpg");
-    background-size: cover;
-    block-size: fit-content;
+body {
+  background: linear-gradient(#6cb4ee, grey);
+}
+/* Home Page */
+.home h1 {
+    text-align: center;
+    color: black;
+    font-size: 100px;
+}
+.home img {
+    
+    width: 400px;
+    height: 400px;
+}
+.home p {
+    font-size: 30px;
 }

@@ -6,7 +6,7 @@ export default function Home() {
         <body id="homePage">
         <div className="home">
             <h1>Welcome to That Time I Got Reincarnated as a Slime!</h1>
-            {/* <img id="homeImg" src="https://www.phoneswiki.com/wp-content/uploads/2021/05/That-Time-I-Got-Reincarnated-as-a-Slime-Season-2-Part-2-Release.jpg" /> */}
+            <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbPdx-ZjFfMGZjOukOeErfQTS0tOoq-9T0cw&usqp=CAU"/>
             <p>
                 My name is Mikami Satoru. A lonely thirty-seven-year-old stuck in a dead-end job, unhappy with with my mundane life, but after dying at the hands of a robber, I awaken to a fresh start in a fantasy realm...as a slime monster. Feel free to look around, and about the world I love an fight for the world that I want!
             </p>

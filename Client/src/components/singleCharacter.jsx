@@ -1,5 +1,6 @@
 import { useNavigate, useParams} from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Comments from './comments';
 
 
 const apiUrl = "http://localhost:8080/api"
@@ -36,6 +37,9 @@ export default function SingleCharacters() {
             <p>{character.placeId}</p>
             <p>{character.description}</p>
             <button onClick={() => {navigate(`/` )}}>Back to All Charcters</button>
+            <br />
+            {<Comments />}
+
         </div>
         </>
     )

@@ -1,13 +1,13 @@
 const client = require("../client")
 
-const createPlaces = async ({name, owner}) => {
+const createPlaces = async ({name, owner, details, imgUrl}) => {
     try {
         const { rows: [place] } = await client.query(`
 
-            INSERT INTO places(name, owner)
-            VALUES($1, $2)
+            INSERT INTO places(name, owner, details, "imgUrl")
+            VALUES($1, $2, $3, $4)
             RETURNING *;
-        `, [name, owner]);
+        `, [name, owner, details, imgUrl]);
         return place;
     } catch (error) {
         throw error;

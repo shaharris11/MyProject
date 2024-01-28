@@ -35,7 +35,9 @@ const createTables = async () => {
         CREATE TABLE places (
             "placeId" SERIAL PRIMARY KEY,
             name VARCHAR(100) UNIQUE NOT NULL,
-            owner VARCHAR (100) NOT NULL
+            owner VARCHAR (100) NOT NULL,
+            details TEXT,
+            "imgUrl" TEXT
         );
 
         CREATE TABLE characters (

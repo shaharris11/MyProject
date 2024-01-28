@@ -21,7 +21,7 @@ export default function Monsters() {
     console.log(monsters);
     return (
         <>
-            <h1>Welcome to That Time I Got Reincarnated as a Slime!</h1>
+           
             <div className="charactersContainer">
                {monsters.map((monster) => {
                 return (
