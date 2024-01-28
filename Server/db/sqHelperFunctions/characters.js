@@ -46,7 +46,7 @@ const getCharactersById = async (characterId) => {
 const getTableCharacter = async (characterId) => {
     try {
         const { rows: [character] } = await client.query(`
-        SELECT monster, places.name, characters.name, characters.title, characters.age, characters.description, characters."imgUrl"
+        SELECT monsters.name, places.name, characters.name, characters.title, characters.age, characters.description, characters."imgUrl"
         FROM monsters 
         INNER JOIN characters ON monsters."monsterId" = characters."monsterId"
         INNER JOIN places ON places."placeId" = characters."placeId"

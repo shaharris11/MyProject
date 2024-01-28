@@ -21,12 +21,13 @@ export default function Monsters() {
     console.log(monsters);
     return (
         <>
-           
-            <div className="charactersContainer">
+            <div className="monsterContainer">
                {monsters.map((monster) => {
                 return (
                     <div key={monster.id} className="monster">
-                        <h2>{monster.monster}</h2>
+                        <h2>{monster.name}</h2>
+                        <img src={monster.imgUrl} alt={monster.name} />
+                        <p>{monster.details}</p>
                         <br />
                     </div>
                 )

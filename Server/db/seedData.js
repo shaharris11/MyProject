@@ -1,24 +1,42 @@
 const monsters = [
-   {monster: "Slime"},
+   {name: "Slime", details: "They are one of the weakest Monsters known to exist. Slimes are typically creatures without any form of higher intelligence that only eat and regenerate. They also usually never leave their territories. It is possible for an intelligent Slime to naturally come into existence as a Unique Monster, though there hasn't been any such occurrence as of yet. In the Slime Diaries, they are seen emerging from the ground in large numbers during hot weather. The Slimes in magicule-deprived regions are extremely violent and eat biological material, since there is a need for survival and a lack of Magicules to consume.",
+   imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSohYtcFblIs5nEzmsyShxbiM_BuUKys8oPyw&usqp=CAU"},
 
-   {monster: "Dragon", details: "The origin of dragons can be traced back to Star King Dragon Veldanava, or more precisely the Elemental Dragon he gifted to his daughter Milim Nava.Upon the death of the Elemental Dragon and its subsequent transformation into a Chaos Dragon, its Factor spread throughout the world, spawning Dragons in areas high in Magicule concentration.", imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/a/ad/Arch_Dragon.png/revision/latest?cb=20190110052632"},
+   {name: "Dragon", details: "The origin of dragons can be traced back to Star King Dragon Veldanava, or more precisely the Elemental Dragon he gifted to his daughter Milim Nava.Upon the death of the Elemental Dragon and its subsequent transformation into a Chaos Dragon, its Factor spread throughout the world, spawning Dragons in areas high in Magicule concentration.", imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/a/ad/Arch_Dragon.png/revision/latest?cb=20190110052632"},
 
-   {monster: "Goblin" },
-   {monster: "Ogre"},
-   {monster: "Hobgoblin"},
-   {monster: "Tempest Wolf " },
+   {name: "Goblin", details: "Goblins ｢子鬼族ゴブリン, goburin, lit. Child Oni Tribe are a race of Sprite Demi-Humans. They seem to be descended from the offspring of Dwarves and Oni. Goblins are one of the races that populate the Great Jura Forest, with many different tribes dotting around the forest. Although there are many different tribes of goblins, they will usually stand together in the face of great danger. Many of the goblins revere the Storm Dragon as their God and protector of the forest. For goblins, deaths are very common, to the point they have evolved to reproduce as much as possible to maintain their population.",
+   imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/5/54/Episode_2.png/revision/latest?cb=20181023192048" },
 
-   {monster: "Human", details: "Humans ｢人間ヒューマン, hyūman｣ are a race with an extremely low tolerance to magicules and a short life span, however their innate capacity for growth, very high reproductive rate and curiosity for knowledge made them Veldanava's race of choice to spread across the cosmos. They were the result of one of Twilight Valentine's many experiments.", imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/7/72/Fuze_Anime.png/revision/latest?cb=20190105062213" },
+   {name: "Ogre", details: "Ogres ｢大鬼族オーガ, ōga, lit. Large Oni Tribe are a race of Demi-Humans descended from fairies. They are a high-class race, but few in numbers. They're one of the most powerful races in the Jura Forest averaging a Rank of B. The ogre village Benimaru and co lived in only housed around 300 ogres. The size of a country's knights order. If one was planning on subjugating such a village with rank B- knights, one would need about 3,000 of them. They often served as mercenaries.",
+   imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk75lE8melvyCXGOPJ8rBvD5lyh6dlskKLKA&usqp=CAU"},
 
-   {monster: "Orcs"},
-   {monster: "Dwarf" },
-   {monster: "Elf"},
+   {name: "Hobgoblin", details: "Hobgoblin ｢人鬼族ホブゴブリン, hobugoburin, lit. Adult Oni Tribe is the evolved form of male Goblins and are generally ranked around D on average. The vast majority of them currently reside in the Jura Tempest Federation.",
+   imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVoK6ktk8Xr15-0dU0B9Db2zjl1tJEtLxj4Q&usqp=CAU"},
 
-   {monster: "Daemon", details: "Daemons ｢悪魔族デーモン, dēmon, lit. Devil Tribe｣ are a major race of naturally occuring Spiritual Lifeforms similiar to Angels and Elementals. They have an advantage against Angels but are in turn disadvantaged against Elementals.", imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/1/12/Demons.jpg/revision/latest?cb=20171228191456"},
+   {name: "Direwolf", details: "Direwolves ｢牙狼族, garō-zoku, lit. Fanged Wolf Tribe｣ are a species of Magic Beasts that live in the plains east of the Great Jura Forest. Direwolves are a major problem for merchants that travel between the Eastern Empire and the kingdoms around the Great Jura Forest. The Empire will only take action if the wolves encroach their grain fields, a vital lifeline for the Empire. However, the Direwolves have learned to avoid the fields, and focus on targeting merchants and Monsters.",
+   imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/1/1e/Direwolf_Anime.png/revision/latest?cb=20190416041342" },
 
-   {monster: "Spirit"},
-   {monster: "Harpie" },
-   {monster: "Lion Beastman" }
+   {name: "Human", details: "Humans ｢人間ヒューマン, hyūman｣ are a race with an extremely low tolerance to magicules and a short life span, however their innate capacity for growth, very high reproductive rate and curiosity for knowledge made them Veldanava's race of choice to spread across the cosmos. They were the result of one of Twilight Valentine's many experiments.", imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/7/72/Fuze_Anime.png/revision/latest?cb=20190105062213" },
+
+   {name: "Orcs", details: "Orcs ｢豚頭族オーク, ōku, lit. Pig-Head Tribe are a D-rank race of Demi-Humans descended from Lycanthropes. Orcs are typically a race that won't attack those stronger than themselves. The orcs are a race bursting with life, renowned for their high reproductive abilities but relatively low intelligence. They're stronger than your average goblin, but pose no danger to veteran adventurers.They live anywhere from 40 to 50 years on average.",
+   imgUrl: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.wattpad.com%2Feb1e7eb0448c884b1b79703abdcfd33d6097a977%2F68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f6232645f567954764b316e4836513d3d2d313134373534353236342e313662643438653066363838626236663432303533333033393036362e706e67%3Fs%3Dfit%26w%3D720%26h%3D720&tbnid=dXSpUQFkS7aX9M&vet=12ahUKEwitw_qfi4GEAxXUAWIAHQN9CfAQMygVegQIARB1..i&imgrefurl=https%3A%2F%2Fwww.wattpad.com%2F1147545264-the-shadow-and-the-slime-op-oc-male-reader-x&docid=wNYc1MfEsQGrxM&w=720&h=405&q=orcs%20images%20from%20that%20time%20i%20got%20reincarnated%20as%20a%20slime&ved=2ahUKEwitw_qfi4GEAxXUAWIAHQN9CfAQMygVegQIARB1"},
+
+   {name: "Dwarf", details: "Dwarves ｢地人族ドワーフ, dowāfu, lit. Earth People Tribe are a race of Demi-Humans with fairy ancestors similar to Elves, Goblins, and Merfolk. Although many would consider dwarves as something closer to goblins than humans, there is no doubting their intelligence and abilities. Dwarves are well known for their serious attitudes both in battle and in their craftsmanship. Their production of top of the line goods and friendly nature puts them in the good graces of a majority of the worlds' inhabitants, and their undefeated military history deters the rest from taking direct action against them as a whole.",
+   imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/f/f6/Tensura_20_04.jpg/revision/latest?cb=20190220184044" },
+
+   {name: "Elf", details: "Elves ｢耳長族エルフ, erufu, lit. Long Eared Tribe are a race of Demi-Humans with Fairy ancestors similar to Dwarves, Goblins, and Merfolk. The Elf race is well known for their unusual longevity. As descendants of fairies, they have an average lifespan of between five hundred and eight hundred years. There are even those said to have lived far longer, coming closer to a fairy-like existence. Their bodies stop maturing by the age of 20 and even the elven elderly have extremely youthful appearances. They start aging rapidly as they approach the end of their lifespan, and after roughly twenty or thirty years, they face the risk of infirmity, just as elderly humans.",
+   imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyoCNKgoRAVUo1wXDinZKBKFsjUIfgIjT7-g&usqp=CAU"},
+
+   {name: "Daemon", details: "Daemons ｢悪魔族デーモン, dēmon, lit. Devil Tribe｣ are a major race of naturally occuring Spiritual Lifeforms similiar to Angels and Elementals. They have an advantage against Angels but are in turn disadvantaged against Elementals.", imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/1/12/Demons.jpg/revision/latest?cb=20171228191456"},
+
+   {name: "Spirit", details: "Spiritual Lifeforms ｢精神生命体, seishin seimei-tai, lit. Mental Organism, also known as Energy Creatures ｢精神生命体エネルギークリーチャー, enerugī kurīchā｣, are beings of pure willpower and energy. Spiritual Lifeforms are an almost god-like existence that need only their mind to remain alive. They're a step above Demi-Spiritual Lifeforms and have transcended the body entirely, making them effectively immortal. They are capable of thinking and existing with just their Soul and Astral Body alone,[2] allowing them to resurrect even from the destruction of their Spiritual Body over a long enough period of time. There are only two reliable methods of killing Spiritual Lifeforms, those being the destruction of their soul - Core Break ｢心核破壊コアブレイク, koa bureiku｣ – and the total loss of all energy – Energy Loss ｢魔素消失エネルギーロスト, enerugī rosuto｣. Any other form of defeat is only temporary and they'll be reborn again somewhere else in the world eventually, though with potential loss of memory or personality.",
+   imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDok-qo4m18SIX2TpHsRO21nV5cvuOot80fg&usqp=CAU"},
+
+   {name: "Harpy", details: "Harpies ｢有翼族ハーピィ, hāpyi, lit. Winged Tribe｣ are a race of winged Majin and are often referred to as the rulers of the skies. Cancels out Flight Magic spells so those who cannot fly normally will fall to their death. Skillful user of it can even use it to directly disrupt the opponent internal Magicules flow to prevent any usage of magic and skill through direct contact with their claws.",
+   imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/1/10/Frey_LN.png/revision/latest/thumbnail/width/360/height/360?cb=20220929104654"},
+
+   {name: "Beastman", details: "Lycanthropes ｢獣人族ライカンスロープ, raikansurōpu, lit. Beast People Tribe｣ are a race of Demi-Humans that can transform into their respective beasts at will and are generally Ranked B on average. The vast majority of them reside in the Beast Kingdom Eurazania. Twilight Valentine created this race by hybridizing Humans with Magic Beasts, enabling them to transform into their respective beasts. The lifespan of lycanthropes is not significantly different from that of humans with some exceptions, except for their extended youth, which lasts from 30 to 50 years. However, as they start to age, their bodies quickly weaken, and they typically succumb within two weeks with some exceptions. The Beastmen, as a race, thrive in battle and eagerly embrace strong adversaries.", 
+   imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/d/de/Albis_semi_transfo_anime.jpg/revision/latest?cb=20220102203318" }
 ]
 
 const characters = [
@@ -120,7 +138,7 @@ const characters = [
       imgUrl: 'https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/a/a6/Beretta_Anime.png/revision/latest?cb=20210731015150'
    },
    {
-      name: 'Clayman', title: 'Demon Lord/ Marionette Master', age: '2000', monsterId: 11, placeId: 9, description: 'Clayman, known as Marionette Master, was a Demon Lord, in the era of the Ten Great Demon Lords. Being a Demon Lord Seed, he lacked some power in comparison to older generations of Demon Lords and thus plotted to bridge this power gap by awakening himself into a True Demon Lord through his schemes. He was considered to be a ghastly man, infamous for his acts of manipulating his subordinates and others like dolls. He becomes the mortal enemy of Rimuru Tempest by plotting the destruction of the Jura Tempest Federation and Rimuru themself, but is ultimately slain by the latter.', 
+      name: 'Clayman', title: 'Demon Lord/ Marionette Master', age: '2000', monsterId: 11, placeId: 2, description: 'Clayman, known as Marionette Master, was a Demon Lord, in the era of the Ten Great Demon Lords. Being a Demon Lord Seed, he lacked some power in comparison to older generations of Demon Lords and thus plotted to bridge this power gap by awakening himself into a True Demon Lord through his schemes. He was considered to be a ghastly man, infamous for his acts of manipulating his subordinates and others like dolls. He becomes the mortal enemy of Rimuru Tempest by plotting the destruction of the Jura Tempest Federation and Rimuru themself, but is ultimately slain by the latter.', 
       imgUrl: 'https://pm1.aminoapps.com/7410/5e5e9a47ac1bd85274128411c185973798fb5e43r1-340-860v2_hq.jpg'
    },
    // {
@@ -158,7 +176,7 @@ const places = [
 
    {name: 'Frost Palace, Ice Continent', owner: 'Guy Crimson', details: "The Frost Palace was originally the Imperial Capital of the Super-Magic Empire during the era of the High Humans. It was the place Guy was summoned into the Central World by the Sorcerer Emperor Jahil. It remained intact due to Rain and Misery avoiding the use of destructive Magic when they slaughtered its inhabitants.After Guy roamed the planet and was defeated by Veldanava, he decided to settle down to carry out his purpose as The Demon Lord. His gaze landed on the ruins of the Imperial Capital from above and, deciding that it was fate, decided to make it his new home. After Velzard showed up and subsequently challenged Guy to a fight, the fierce conflict had frozen the capital solid and shifted the planet's axis, causing the entire continent they were standing on to now be the north pole. Guy, finding the frozen palace to be beautiful, decided to keep it frozen, with Velzard leaking out a small portion of her Aura from then on to ensure it",
    imgUrl: "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/2/21/White_Ice_Palace.png/revision/latest?cb=20210810193957"},
-   {name: 'Unknown', owner: 'Unknown'}
+   
 ]
 
 const comments = [

@@ -1,14 +1,14 @@
 const client = require("../client");
 
-const createMonsters = async ({monster}) => {
+const createMonsters = async ({name, details, imgUrl}) => {
     try {
-        const { rows: [monsterName] } = await client.query(`
+        const { rows: [monster] } = await client.query(`
 
-            INSERT INTO monsters(monster)
-            VALUES($1)
+            INSERT INTO monsters(name, details, "imgUrl")
+            VALUES($1, $2, $3)
             RETURNING *;
-        `, [monster]);
-        return monsterName;
+        `, [name, details, imgUrl]);
+        return monster;
     } catch (error) {
         throw error;
     }

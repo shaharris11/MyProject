@@ -22,12 +22,14 @@ export default function Places () {
     return (
         <>
            
-            <div className="charactersContainer">
+            <div className="placesContainer">
                {places.map((place) => {
                 return (
                     <div key={place.id} className="place">
                         <h2>{place.name}</h2>
                         <h3>{place.owner}</h3>
+                        <img src={place.imgUrl} alt={place.name} />
+                        <p>{place.details}</p>
                         <br />
                     </div>
                 )
