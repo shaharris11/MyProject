@@ -14,9 +14,9 @@ export default function Comments() {
         async function createComment() {
            const response = {name, description}
            const data = await makeComments(response)
-           const results = await fetchComments()
-           setAllComments(results)
-           return data 
+           const results = await fetchComments(data)
+           setAllComments(allComments)
+           return results
         } 
     
         async function update({characterId}) {
