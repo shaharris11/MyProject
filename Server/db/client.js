@@ -1,6 +1,6 @@
 const { Client } = require('pg');
 
-const dbName = "MyWebsite"
-const client = new Client(`postgres://localhost:3546/${dbName}`)
+const dbName = "slime"
+const client = new Client(`https://theslimewebsite.onrender.com/${dbName}`)
 
 module.exports = client;

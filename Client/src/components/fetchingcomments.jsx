@@ -15,6 +15,9 @@ export const makeComments = async (comment) => {
     try {
         const response = await fetch(`${apiUrl}/comments`, {
             method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+              },
             body: JSON.stringify({
                 name: comment.name,
                 characterId: comment.characterId,

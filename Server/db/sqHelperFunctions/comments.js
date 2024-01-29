@@ -3,6 +3,7 @@ const util = require('../util');
 
 async function getAllComments(characterId) {
     try {
+        console.log(characterId);
         const { rows: comments } = await client.query(`
             SELECT * 
             FROM comments
@@ -26,14 +27,15 @@ async function getCommentId(commentId) {
     }
 }
 
-const createComments = async ({name, charcatersId, description}) => {
+const createComments = async (body) => {
     try {
         const { rows: [comment] } = await client.query(`
 
             INSERT INTO comments(name, "characterId", description)
             VALUES($1, $2, $3)
             RETURNING *;
-        `, [name, charcatersId, description]);
+        `, [body.name, body.characterId, body.description]);
+        console.log(body.name, body.characterId, body.description);
         return comment;
     } catch (error) {
         throw error;
