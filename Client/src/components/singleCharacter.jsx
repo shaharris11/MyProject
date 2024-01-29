@@ -1,4 +1,4 @@
-import { useNavigate, useParams} from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Comments from './comments';
 
@@ -9,7 +9,7 @@ export default function SingleCharacters() {
     const [character, setCharacter] = useState({})
     const {characterId} = useParams();
     // const {details} = useParams();
-    const navigate = useNavigate();
+    
 
     useEffect(() => {
         // console.log(details);
@@ -28,15 +28,15 @@ export default function SingleCharacters() {
     }, [])
     return (
         <>
-        <div id='singleCharacter'>
+        <div className='singleCharacter'>
             <img src={character.imgUrl} alt={character.name}/> 
             <h1>{character.name}</h1>
-            <h2>{character.title}</h2>
-            <p>Age:{character.age}</p>
+            <h1>{character.title}</h1>
+            <h1>Age:{character.age}</h1>
             <p>{character.monsterId}</p>
             <p>{character.placeId}</p>
             <p>{character.description}</p>
-            <button onClick={() => {navigate(`/` )}}>Back to All Charcters</button>
+            
             <br />
             {<Comments />}
 

@@ -8,6 +8,7 @@ import SingleCharacters from './components/singleCharacter'
 import Monsters from './components/monsters'
 import Home from './components/home'
 import Places from './components/places'
+import Comments from './components/comments'
 
 
 
@@ -22,6 +23,7 @@ export default function App() {
         <Route path='/characters/:characterId' element={<SingleCharacters /> }/>
         <Route path='/monsters' element={<Monsters /> }/>
         <Route path='/places' element={<Places /> }/>
+        <Route path='/comments/:characterId' element={<Comments />}/>
       </Routes>
     </>
   )

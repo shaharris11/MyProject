@@ -2,9 +2,9 @@ import { useState } from "react";
 import { fetchComments, makeComments, commentUpdate, deleteComment } from "./fetchingcomments";
 
 
-export default function Comments({ setAllComments}) {
+export default function Comments() {
     
-
+    const [allComments, setAllComments] = useState()
     const [name, setName] = useState()
     const [description, setDescription] = useState()
     
@@ -45,6 +45,9 @@ export default function Comments({ setAllComments}) {
     }
     return (
         <>
+        <h2>
+            Tell us what you think about this character! 
+        </h2>
             <form className="commentSection" onSubmit={submitHandler}>
                 <label>
                     Name:
@@ -61,6 +64,7 @@ export default function Comments({ setAllComments}) {
                     />
                 </label>
                 <br />
+                <button type="submit">Submit</button>
             </form>
         </>
     )
