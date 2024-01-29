@@ -1,6 +1,6 @@
 const { Client } = require('pg');
 
-const dbName = "slime"
-const client = new Client(`https://theslimewebsite.onrender.com/${dbName}`)
+
+const client = new Client(`postgres://slime_user:ay6svxJWGhv9JFcBDcFW9rkIedTAbjD8@dpg-cmrv2a0cmk4c7383qp9g-a/slime`)
 
 module.exports = client;
